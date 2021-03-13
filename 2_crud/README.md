@@ -11,7 +11,7 @@ Avoir installé :
 - [NodeJS](https://nodejs.org/en/)
 - `NPM`
 - [MongoDB](https://www.mongodb.com/try/download/community)
-- [Robomongo](https://robomongo.org/download) ("phpmyadmin" pour MongoDB)
+- `Mongo Compass` ("phpmyadmin" pour MongoDB)
 - [Postman](https://www.postman.com/) ou `cURL` (pour tester les routes)
 
 ## Énoncé
