@@ -28,7 +28,7 @@ Installer avec NPM la liste des paquets suivants :
 - body-parser
 - mongoose
 
-Installer en tant que dépendence de developpement :
+Installer en tant que dépendence de développement :
 
 - nodemon
 
@@ -56,7 +56,7 @@ Dans un dossier `routes`, créer les routes suivantes :
 - `/vehicle/bike`, PUT, paramètre `id`
 - `/vehicle/bike`, DELETE, paramètre `id`
 
-> Faites en sorte de spérarer de façon logique les routes et également les fichiers !
+> Faites en sorte de séparer de façon logique les routes et également les fichiers !
 
 > Il est également possible d'éviter de dupliquer la partie commune à toutes les routes
 
@@ -110,9 +110,9 @@ Dans un dossier `controllers`, créer les fonctions suivantes :
 - updateBikeById
 - deleteBikeById
 
-> Ne pas oublier de lier chaques fonctions à une route
+> Ne pas oublier de lier chaque fonctions à une route
 
-Pour chaque fonctions effetuer les différentes intéractions avec la base de données pour aller :
+Pour chaque fonctions effectuer les différentes intéractions avec la base de données pour aller :
 
 - Chercher
 - Créer

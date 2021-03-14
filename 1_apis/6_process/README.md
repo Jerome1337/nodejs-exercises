@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Utiliser l'API Process de NodeJS pour récupérer des infomrations concernant les processus NodeJS.
+Utiliser l'API Process de NodeJS pour récupérer des informations concernant les processus NodeJS.
 
 ## Énoncé
 

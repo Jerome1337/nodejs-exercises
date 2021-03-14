@@ -14,7 +14,7 @@ Avoir réaliser l'exercice [#2](../2_crud/README.md) et avoir un CRUD fonctionne
 
 Pour cet exercice nous allons utiliser le moteur de templating [EJS](https://ejs.co/).
 
-Installer `Ejs` avec NPM dans le projet.
+Installer `EJS` avec NPM dans le projet.
 
 Configurer `Express` afin qu'il utilise `ejs` dans son moteur de vues.
 
@@ -49,7 +49,7 @@ Format du tableau :
 | --- | ------- | ------ | ----- | -------------------------- |
 | 1   | Renault | Clio   | 2008  | Bouton page et suppression |
 | 2   | Peugeot | c3     | 2016  | Bouton page et suppression |
-| x   | X       | X      | XXXX  | Bouton page et suppression |
+| X   | X       | X      | XXXX  | Bouton page et suppression |
 
 #### **Informations d'un véhicule**
 
