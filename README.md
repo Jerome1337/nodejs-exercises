@@ -4,17 +4,20 @@ Apprendre à utiliser NodeJS
 
 ```text
 .
-├── 1_apis
+├── 1_modules
+│   ├── 1_internal_module
+│   └── 2_external_module
+├── 2_apis
 │   ├── 1_http
 │   ├── 2_fs
 │   ├── 3_os
 │   ├── 4_crypto
 │   ├── 5_url
 │   └── 6_process
-├── 2_crud
-├── 3_templating
-├── 4_cli
-├── 5_chat
+├── 3_crud
+├── 4_templating
+├── 5_cli
+├── 6_chat
 ├── LICENSE
 └── README.md
 ```
