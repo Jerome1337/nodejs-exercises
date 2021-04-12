@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo
+
+  back:
+    image: node:latest
+    ports:
+      - 5000:3000
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: "npm start"

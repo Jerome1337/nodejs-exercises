@@ -1,0 +1,14 @@
+<%- include('partials/head') %> <%- include('partials/nav') %>
+
+<h1>FRONT END</h1>
+
+<ul>
+  <% animals.forEach((animal) => { %>
+  <li>
+    <%= animal.name %> <%= animal.country %>
+    <button type="button" onclick="deleteAnimal('<%= animal._id %>')">
+      supprimer
+    </button>
+  </li>
+  <% }) %>
+</ul>

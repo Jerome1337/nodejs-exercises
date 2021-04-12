@@ -1,3 +1,5 @@
+const process = require("process");
+
 const triangles = [
   {
     base: 67,
@@ -20,3 +22,9 @@ const triangles = [
 triangles.map((triangle) => {
   console.log((triangle.base * triangle.heigh) / 2);
 });
+
+const memoryUsage = process.memoryUsage();
+
+console.log(memoryUsage);
+
+console.log(`Memory used: ${memoryUsage.heapUsed / 1024 / 1024} MB`);

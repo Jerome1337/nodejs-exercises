@@ -1,0 +1,14 @@
+<%- include('../partials/head') %> <%- include('../partials/navigation') %>
+
+<h1>Voiture numéro : <%= car._id %></h1>
+
+<ul>
+  <li>Brand : <%= car.brand %></li>
+  <li>Model : <%= car.model %></li>
+  <li>Année : <%= car.year %></li>
+  <li>Puissance : <%= car.power %></li>
+  <li>Nombre de portes : <%= car.door_number %></li>
+  <li>Type : <%= car.type %></li>
+  <li>Prix : <%= car.price %></li>
+  <li>Libre : <%= car.reserved ? "Non" : "Oui" %></li>
+</ul>

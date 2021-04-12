@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>Chat</h1>
+    <div>
+      <h2>Utilisateurs connectés</h2>
+      <ul id="users"></ul>
+    </div>
+
+    <div>
+      <form id="form">
+        <input type="text" name="chat" id="chatMessage" />
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+
+    <div>
+      <ul id="publicChat"></ul>
+    </div>
+
+    <div
+      id="privateChatBlock"
+      style="display: none; min-width: 200px; background-color: darkgrey"
+    >
+      <form id="privateForm">
+        <input type="text" name="pm" id="chatPrivateMessage" />
+        <button type="submit">Envoyer le message privé</button>
+      </form>
+
+      <div>
+        <ul id="privateChat"></ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    const socket = io();
+
+    socket.on("user connected", (users) => {
+      const userList = document.getElementById("users");
+
+      users.forEach((user) => {
+        const currentUserId = user.id;
+
+        if (!document.getElementById(currentUserId)) {
+          const newUser = document.createElement("li");
+
+          newUser.textContent = user.username;
+          newUser.id = currentUserId;
+          newUser.onclick = () => {
+            const privateChatBlock = document.getElementById(
+              "privateChatBlock"
+            );
+
+            privateChatBlock.setAttribute("userId", currentUserId);
+            privateChatBlock.style.display = "block";
+          };
+
+          userList.appendChild(newUser);
+        }
+      });
+    });
+
+    socket.on("user disconnected", (userId) => {
+      document.getElementById(userId).remove();
+    });
+
+    const form = document.getElementById("form");
+    const chatMessage = document.getElementById("chatMessage");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (chatMessage.value !== "") {
+        socket.emit("message", chatMessage.value);
+
+        chatMessage.value = "";
+      }
+    });
+
+    const createMessageElement = (chat, message) => {
+      const messageElement = document.createElement("li");
+
+      messageElement.textContent = message;
+
+      chat.appendChild(messageElement);
+    };
+
+    socket.on("message", (message) => {
+      createMessageElement(document.getElementById("publicChat"), message);
+    });
+
+    socket.on("history", (historyMessages) => {
+      const publicChat = document.getElementById("publicChat");
+      if (publicChat.innerHTML === "") {
+        historyMessages.forEach((message) => {
+          createMessageElement(publicChat, message);
+        });
+      }
+    });
+
+    const privateForm = document.getElementById("privateForm");
+
+    privateForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const privateMessage = document.getElementById("chatPrivateMessage");
+
+      if (privateMessage.value !== "") {
+        socket.emit(
+          "pm",
+          document.getElementById("privateChatBlock").getAttribute("userId"),
+          privateMessage.value
+        );
+
+        createMessageElement(
+          document.getElementById("privateChat"),
+          privateMessage.value
+        );
+
+        privateMessage.value = "";
+      }
+    });
+
+    socket.on("pm", (senderId, message) => {
+      if (
+        document.getElementById("privateChatBlock").style.display === "none"
+      ) {
+        privateChatBlock.setAttribute("userId", senderId);
+        privateChatBlock.style.display = "block";
+      }
+
+      createMessageElement(document.getElementById("privateChat"), message);
+    });
+  </script>
+</html>

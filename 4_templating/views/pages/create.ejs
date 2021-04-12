@@ -1,0 +1,32 @@
+<%- include('../partials/head') %> <%- include('../partials/navigation') %>
+
+<h1>Ajouter une voiture</h1>
+
+<form>
+  <div>
+    <label for="brand">Marque</label>
+    <input type="text" name="brand" id="brand" />
+  </div>
+  <div>
+    <label for="model">Model</label>
+    <input type="text" name="model" id="model" />
+  </div>
+  <div>
+    <label for="year">Année</label>
+    <input type="text" name="year" id="year" />
+  </div>
+  <div>
+    <label for="power">Puissance</label>
+    <input type="text" name="power" id="power" />
+  </div>
+  <div>
+    <label for="price">Prix</label>
+    <input type="text" name="price" id="price" />
+  </div>
+  <div>
+    <label for="doorNumber">Nombre de porte</label>
+    <input type="text" name="doorNumber" id="doorNumber" />
+  </div>
+
+  <button type="submit" onclick="createCar()">Ajouter</button>
+</form>

@@ -1,0 +1,39 @@
+<%- include('../partials/head') %> <%- include('../partials/navigation') %>
+
+<h1>Mettre à jour la voiture numéro : <%= car._id %></h1>
+
+<form>
+  <div>
+    <label for="brand">Marque</label>
+    <input type="text" name="brand" id="brand" value="<%= car.brand %>" />
+  </div>
+  <div>
+    <label for="model">Model</label>
+    <input type="text" name="model" id="model" value="<%= car.model %>" />
+  </div>
+  <div>
+    <label for="year">Année</label>
+    <input type="text" name="year" id="year" value="<%= car.year %>" />
+  </div>
+  <div>
+    <label for="power">Puissance</label>
+    <input type="text" name="power" id="power" value="<%= car.power %>" />
+  </div>
+  <div>
+    <label for="price">Prix</label>
+    <input type="text" name="price" id="price" value="<%= car.price %>" />
+  </div>
+  <div>
+    <label for="doorNumber">Nombre de porte</label>
+    <input
+      type="text"
+      name="doorNumber"
+      id="doorNumber"
+      value="<%= car.door_number %>"
+    />
+  </div>
+
+  <button type="submit" onclick="updateCar('<%= car._id %>')">
+    Mettre à jour
+  </button>
+</form>

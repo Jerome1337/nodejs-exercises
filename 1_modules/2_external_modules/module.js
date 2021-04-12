@@ -7,3 +7,8 @@ const array_2 = [
   { name: "aigle", genre: "female" },
   { name: "corbeau", genre: "female" },
 ];
+
+module.exports = {
+  array_1,
+  array_2,
+};
