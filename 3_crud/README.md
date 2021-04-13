@@ -47,12 +47,12 @@ Dans un dossier `routes`, créer les routes suivantes :
 
 - `/vehicle/cars`, GET
 - `/vehicle/car`, GET, paramètre `id`
-- `/vehicle/car`, POST, paramètre `id`
+- `/vehicle/car`, POST,
 - `/vehicle/car`, PUT, paramètre `id`
 - `/vehicle/car`, DELETE, paramètre `id`
 - `/vehicle/bikes`, GET
 - `/vehicle/bike`, GET, paramètre `id`
-- `/vehicle/bike`, POST, paramètre `id`
+- `/vehicle/bike`, POST,
 - `/vehicle/bike`, PUT, paramètre `id`
 - `/vehicle/bike`, DELETE, paramètre `id`
 
